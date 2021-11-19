@@ -209,12 +209,12 @@ acc_medianTable1Z = [1] * ACC_MEDIANTABLESIZE
 acc_medianTable2X = [1] * ACC_MEDIANTABLESIZE
 acc_medianTable2Y = [1] * ACC_MEDIANTABLESIZE
 acc_medianTable2Z = [1] * ACC_MEDIANTABLESIZE
-mag_medianTable1X = [1] * MAG_MEDIANTABLESIZE
-mag_medianTable1Y = [1] * MAG_MEDIANTABLESIZE
-mag_medianTable1Z = [1] * MAG_MEDIANTABLESIZE
-mag_medianTable2X = [1] * MAG_MEDIANTABLESIZE
-mag_medianTable2Y = [1] * MAG_MEDIANTABLESIZE
-mag_medianTable2Z = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable1X = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable1Y = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable1Z = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable2X = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable2Y = [1] * MAG_MEDIANTABLESIZE
+# mag_medianTable2Z = [1] * MAG_MEDIANTABLESIZE
 
 IMU.detectIMU()     #Detect if BerryIMU is connected.
 if(IMU.BerryIMUversion == 99):
@@ -452,7 +452,7 @@ while True:
     else:
         output = steps
     
-    client.send(bytes(str(output)))
+    client.send(bytes(str(output), 'UTF-8'))
 
 
     #print(output)
