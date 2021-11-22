@@ -48,7 +48,13 @@ def main():
         success, img = cap.read()
         img = detector.findPose(img)
         lmList = detector.getPosition(img)
-        print(lmList[0])
+
+        if lmList[1][1] < 200:
+            print("1")
+        elif lmList[1][1] > 450:
+            print("-1")
+        else:
+            print("0")
 
         cTime = time.time()
         fps = 1 / (cTime - pTime)
