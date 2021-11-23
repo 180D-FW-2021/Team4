@@ -452,18 +452,18 @@ while True:
     else:
         output = steps
     
-    output = str(output)
-    output_len = len(str(steps)) + 1
-    if len(output) < output_len:
+    output_str = str(output)
+    output_len = len(str(steps)) + 1 # max number of characters will be digits_in_max_steps + 1 due to possibility of a negative sign
+    if len(output_str) < output_len:
         if int(output) >= 0:
-            output = output.rjust(output_len + 1, '0')
+            output_str = output_str.rjust(output_len + 1, '0')
         else:
-            output = abs(int(output))
-            output = output.rjust(output_len, '0')
-            output = "-" + str(output)
+            output_str = str(abs(int(output)))
+            output_str = output_str.rjust(output_len, '0')
+            output_str = "-" + output_str
         
     
-    client.send(bytes((output), 'UTF-8'))
+    client.send(bytes((output_str), 'UTF-8'))
 
 
     #print(output)
