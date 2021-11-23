@@ -2,6 +2,11 @@ import cv2
 import mediapipe as mp
 import time
 
+import sys
+sys.path.append(".\controller")
+import UdpComms as U
+
+sock = U.UdpComms(udpIP="127.0.0.1", portTX=8001, portRX=8003, enableRX=True, suppressWarnings=True)
 
 class PoseDetector:
 
@@ -43,23 +48,30 @@ def main():
     # cap = cv2.VideoCapture('a.mp4')
     cap = cv2.VideoCapture(0)
     pTime = 0
+    output = 0
     detector = PoseDetector()
     while True:
         success, img = cap.read()
         img = detector.findPose(img)
         lmList = detector.getPosition(img)
 
-        if lmList[1][1] < 200:
-            print("1")
-        elif lmList[1][1] > 450:
-            print("-1")
-        else:
-            print("0")
+        if lmList[1][1] < 200: # leaning right
+            output = 1
+            #print("1")
+        elif lmList[1][1] > 450: # leaning left
+            output = -1
+            #print("-1")
+        else: # not leaning
+            output = 0
+            #print("0")
 
         cTime = time.time()
-        fps = 1 / (cTime - pTime)
+        #fps = 1 / (cTime - pTime)
+        fps = 10
         pTime = cTime
 
+        sock.SendData(str(output))
+        print(output)
         cv2.putText(img, str(int(fps)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
         cv2.imshow("Image", img)
         cv2.waitKey(1)

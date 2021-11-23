@@ -21,13 +21,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-[Serializable]
-public class SteeringData 
-{
-    public int bt_data { get; set; }
-    public int pose_data { get; set; }
-}
-
 public class UdpSocket : MonoBehaviour
 {
     [HideInInspector] public bool isTxStarted = false;
@@ -82,9 +75,9 @@ public class UdpSocket : MonoBehaviour
             {
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
-                string text = Encoding.UTF8.GetString(data);
-                print(">> " + text);
-                ProcessInput(text);
+                string json_string = Encoding.UTF8.GetString(data);
+                //print(">> " + json_string);
+                ProcessInput(json_string);
             }
             catch (Exception err)
             {
@@ -96,7 +89,8 @@ public class UdpSocket : MonoBehaviour
     private void ProcessInput(string input)
     {
         // PROCESS INPUT RECEIVED STRING HERE
-
+        SteeringData s = JsonUtility.FromJson<SteeringData>(input);
+        print(s.bt_data + "   " + s.pose_data);
         if (!isTxStarted) // First data arrived so tx started
         {
             isTxStarted = true;
@@ -112,4 +106,11 @@ public class UdpSocket : MonoBehaviour
         client.Close();
     }
 
+}
+
+[Serializable]
+public class SteeringData 
+{
+    public int bt_data;
+    public int pose_data;
 }
