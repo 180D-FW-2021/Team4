@@ -22,6 +22,13 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Text.Json;
 
+[Serializable]
+public class SteeringData 
+{
+    public int bt_data { get; set; }
+    public int pose_data { get; set; }
+}
+
 public class UdpSocket : MonoBehaviour
 {
     [HideInInspector] public bool isTxStarted = false;
@@ -34,13 +41,7 @@ public class UdpSocket : MonoBehaviour
     UdpClient client;
     IPEndPoint remoteEndPoint;
     Thread receiveThread; // Receiving Thread
-
-    public class SteeringData 
-    {
-        public int bt_data { get; set; }
-        public int pose_data { get; set; }
-    }
-
+    
     public void SendData(string message) // Use to send data to Python
     {
         try
