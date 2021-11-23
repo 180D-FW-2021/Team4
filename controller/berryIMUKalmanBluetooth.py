@@ -25,7 +25,7 @@ import datetime
 import os
 import socket
 
-receiver_address = 'd4:3b:04:97:da:5f' # change this to your MAC address
+receiver_address = '5c:fb:3a:65:d7:80' # change this to your MAC address
 port = 5 # if 5 isn't available, choose another port # between 1-30
 
 # Attempt connection for up to 1 minute before quitting script
@@ -452,7 +452,11 @@ while True:
     else:
         output = steps
     
-    client.send(bytes(str(output), 'UTF-8'))
+    output = str(output)
+    if len(output) < 3:
+        output = output.rjust(3, '0')
+    
+    client.send(bytes(output), 'UTF-8')
 
 
     #print(output)
