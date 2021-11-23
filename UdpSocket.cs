@@ -20,7 +20,6 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using System.Text.Json;
 
 [Serializable]
 public class SteeringData 
@@ -41,7 +40,7 @@ public class UdpSocket : MonoBehaviour
     UdpClient client;
     IPEndPoint remoteEndPoint;
     Thread receiveThread; // Receiving Thread
-    
+
     public void SendData(string message) // Use to send data to Python
     {
         try
