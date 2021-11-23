@@ -453,12 +453,13 @@ while True:
         output = steps
     
     output = str(output)
-    if len(output) < 3:
+    output_len = len(str(steps)) + 1
+    if len(output) < output_len:
         if int(output) >= 0:
-            output = output.rjust(3, '0')
+            output = output.rjust(output_len + 1, '0')
         else:
             output = abs(int(output))
-            output = output.rjust(2, '0')
+            output = output.rjust(output_len, '0')
             output = "-" + str(output)
         
     
