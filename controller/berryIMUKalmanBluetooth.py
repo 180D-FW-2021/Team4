@@ -455,7 +455,7 @@ while True:
     output_str = str(output)
     output_len = len(str(steps)) + 1 # max number of characters will be digits_in_max_steps + 1 due to possibility of a negative sign
     if len(output_str) < output_len:
-        if int(output) >= 0:
+        if output >= 0:
             output_str = output_str.rjust(output_len + 1, '0')
         else:
             output_str = str(abs(int(output)))
@@ -468,5 +468,5 @@ while True:
 
     #print(output)
     #slow program down a bit, makes the output more readable
-    time.sleep(0.01)
+    time.sleep(0.5)
 
