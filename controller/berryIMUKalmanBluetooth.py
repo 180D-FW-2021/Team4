@@ -456,7 +456,7 @@ while True:
     if len(output) < 3:
         output = output.rjust(3, '0')
     
-    client.send(bytes(output), 'UTF-8')
+    client.send(bytes((output), 'UTF-8'))
 
 
     #print(output)
