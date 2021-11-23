@@ -457,21 +457,16 @@ while True:
     # fixed-length output
     output_str = str(output)
     output_len = len(str(steps)) + 1 # max number of characters will be digits_in_max_steps + 1 due to possibility of a negative sign
-    if len(output_str) < 3:
+    if len(output_str) < output_len:
         if output >= 0:
-            output_str = output_str.rjust(output_len + 1, '0')
+            output_str = output_str.rjust(output_len, '0')
         else:
             output_str = str(abs(int(output)))
-            output_str = output_str.rjust(output_len, '0')
+            output_str = output_str.rjust(output_len-1, '0')
             output_str = "-" + output_str
-        
-    
-
-
     client.sendall(bytes((output_str), 'UTF-8'))
 
 
     #print(output)
     #slow program down a bit, makes the output more readable
-    time.sleep(0.1)
-
+    #time.sleep(0)
