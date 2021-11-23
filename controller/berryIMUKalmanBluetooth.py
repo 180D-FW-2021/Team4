@@ -454,7 +454,13 @@ while True:
     
     output = str(output)
     if len(output) < 3:
-        output = output.rjust(3, '0')
+        if int(output) >= 0:
+            output = output.rjust(3, '0')
+        else:
+            output = abs(int(output))
+            output = output.rjust(2, '0')
+            output = "-" + str(output)
+        
     
     client.send(bytes((output), 'UTF-8'))
 
