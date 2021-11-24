@@ -34,6 +34,8 @@ public class UdpSocket : MonoBehaviour
     IPEndPoint remoteEndPoint;
     Thread receiveThread; // Receiving Thread
 
+    public SteeringData steeringData;
+
     public void SendData(string message) // Use to send data to Python
     {
         try
@@ -89,8 +91,8 @@ public class UdpSocket : MonoBehaviour
     private void ProcessInput(string input)
     {
         // PROCESS INPUT RECEIVED STRING HERE
-        SteeringData s = JsonUtility.FromJson<SteeringData>(input);
-        print(s.bt_data + "   " + s.pose_data);
+        steeringData = JsonUtility.FromJson<SteeringData>(input);
+        //print(s.bt_data + "   " + s.pose_data);
         if (!isTxStarted) // First data arrived so tx started
         {
             isTxStarted = true;
@@ -109,7 +111,7 @@ public class UdpSocket : MonoBehaviour
 }
 
 [Serializable]
-public class SteeringData 
+public class SteeringData
 {
     public int bt_data;
     public int pose_data;
