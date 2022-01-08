@@ -54,23 +54,24 @@ def main():
         success, img = cap.read()
         img = detector.findPose(img)
         lmList = detector.getPosition(img)
-
-        if lmList[1][1] < 200: # leaning right
-            output = 1
-            #print("1")
-        elif lmList[1][1] > 450: # leaning left
-            output = -1
-            #print("-1")
-        else: # not leaning
-            output = 0
-            #print("0")
+        if lmList:
+            if lmList[1][1] < 200: # leaning right
+                output = 1
+                #print("1")
+            elif lmList[1][1] > 450: # leaning left
+                output = -1
+                #print("-1")
+            else: # not leaning
+                output = 0
+                #print("0")
+            sock.SendData(str(output))
 
         cTime = time.time()
         #fps = 1 / (cTime - pTime)
         fps = 10
         pTime = cTime
 
-        sock.SendData(str(output))
+        #sock.SendData(str(output))
         print(output)
         cv2.putText(img, str(int(fps)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
         cv2.imshow("Image", img)
