@@ -64,14 +64,16 @@ def main():
             else: # not leaning
                 output = 0
                 #print("0")
-            sock.SendData(str(output))
+        else: # out of frame
+            output = 0
+        
 
         cTime = time.time()
         #fps = 1 / (cTime - pTime)
         fps = 10
         pTime = cTime
 
-        #sock.SendData(str(output))
+        sock.SendData(str(output))
         print(output)
         cv2.putText(img, str(int(fps)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
         cv2.imshow("Image", img)
