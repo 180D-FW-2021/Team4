@@ -77,7 +77,7 @@ In berryIMUKalmanBluetooth.py, replace the MAC address in line 28 with the same 
 
 Run the following:
 
-    sudo pip install smbus2
+    sudo pip install smbus2==0.4.0
     
 On your PC, run the following command:
 
