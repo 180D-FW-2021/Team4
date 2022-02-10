@@ -2,6 +2,7 @@
 #### Created by ECE180D Team 4: Yunxuan Helena Zhang, Yonghao Wu, Elijah Ellsberry, Edward Hage  
 
 # Project Overview
+### You can find our leaderboard website [here!](https://freeride-leaderboard.herokuapp.com/) (work in progress...)
 
 Freeride is a mountain bike simulation that provides an engaging and interactive gaming experience for bikers and adventurers alike!
 The game incorporates computer vision-based pose detection coupled with a custom wireless controller constructed using real mountainbike handlebars in order to create a sense of realistic steering in-game. The game may also be controlled using a traditional keyboard setup. In order to win, the player must navigate down a treacherous mountain terrain through highlighted rings before time runs out! Starting the game is as simple as saying "START" into your computer's microphone at the main menu or clicking the button to start playing!  
@@ -11,7 +12,7 @@ The game incorporates computer vision-based pose detection coupled with a custom
 * Windows 10 PC with webcam and microphone
 * Internet Connection
 * Keyboard and Mouse
-* Download the 1.0 version of the game by clicking **DOWNLOAD ALL** from [here](https://drive.google.com/drive/folders/1UwS_TOVVagyYyLYukNGMaLGsPThrIzT2?usp=sharing)
+* Download the 1.0 version of the game by clicking **DOWNLOAD ALL** from [here](https://drive.google.com/drive/folders/1TNyI20opnT0iORDcK3ohroQoQwGf5iiG?usp=sharing)
 * A method of using SSH on your Raspberry Pi, instructions can be found 
 * Miniconda
     * you can install it [here](https://docs.conda.io/en/latest/miniconda.html)
