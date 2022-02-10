@@ -12,7 +12,7 @@ The game incorporates computer vision-based pose detection coupled with a custom
 * Windows 10 PC with webcam and microphone
 * Internet Connection
 * Keyboard and Mouse
-* Download the 1.0 version of the game by clicking **DOWNLOAD ALL** from [here](https://drive.google.com/drive/folders/1UwS_TOVVagyYyLYukNGMaLGsPThrIzT2?usp=sharing)
+* Download the 1.0 version of the game by clicking **DOWNLOAD ALL** from [here](https://drive.google.com/drive/folders/1TNyI20opnT0iORDcK3ohroQoQwGf5iiG?usp=sharing)
 * A method of using SSH on your Raspberry Pi, instructions can be found 
 * Miniconda
     * you can install it [here](https://docs.conda.io/en/latest/miniconda.html)
