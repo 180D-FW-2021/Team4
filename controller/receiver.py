@@ -2,17 +2,36 @@ import socket
 import json
 import time
 import UdpComms as U
+import subprocess
+import tempfile
 
-server_address = '5c:fb:3a:65:d7:80' # change this to your computer's bluetooth MAC address
+script = "findBTMac.bat"
+run = subprocess.Popen(script, shell=True, stdout = subprocess.PIPE)
+stdout, stderr = run.communicate()
+print("Script returned with status code: " + str(run.returncode))
+
+temp_dir = tempfile.gettempdir()
+with open(temp_dir + '\mymac.txt', 'r') as file:
+    filedata = file.read()
+
+filedata = filedata.replace('-', ':')
+print("Your bluetooth MAC address is: " + filedata)
+file.close()
+with open(temp_dir + '\mymac.txt', 'w') as file:
+    file.write(filedata)
+file.close()
+
+server_address = filedata.strip() # change this to your computer's bluetooth MAC address
 port = 5
 
 # Initialization to add RFCOMM protocol to endpoint
-serv = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
-sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, suppressWarnings=True)
-end_cv_sock = U.UdpComms(udpIP="127.0.0.1", portTX=8003, portRX=8004, enableRX=False, suppressWarnings=True)
+serv = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM) # bluetooth connection to raspberry PI
+sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, suppressWarnings=True) # communication with Unity
+end_cv_sock = U.UdpComms(udpIP="127.0.0.1", portTX=8003, portRX=8004, enableRX=False, suppressWarnings=True) # communication with pose detection script
 
 # Assigns a port for the server that listens to clients connecting to this port
 serv.bind((server_address, port))
+print("Awaiting controller connection...")
 serv.listen()
 prev_time = 0
 prev_pose_data = 0
