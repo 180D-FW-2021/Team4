@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ShowTableData from './practice/ShowTableData'
 import './App.css';
 import './practice/Table.css'
 
@@ -7,31 +6,16 @@ function App() {
   const [entries, setEntries] = React.useState(null);
 
   React.useEffect(() => {
-  //   fetch("/api")
-  //     .then((res) => res.json())
-  //     .then((data) => setData());
-  // }, []);
-
   fetch("/api")
       .then((res) => res.json())
       .then((data) => setEntries(data));
   }, []);
 
-  // return (
-  //   <div className="App">
-  //     <p>{entries && entries.map((entries, index) => (
-  //       <div key={index}>
-  //         {entries.name}
-  //       </div>
-  //     ))}</p>
-  //     <h1>Test table data</h1>
-  //     <ShowTableData/>
-  //   </div>
-  // )
-
   return (
     <div className="App">
-      <h1>Test table data</h1>
+      <div className="header">
+        <img src="/freeride_logo_transparent.png" alt="biker going down mountain terrain logo" width="300" height="300"/>
+      </div>
       <div>
         <table class="Table">
           <thead>
