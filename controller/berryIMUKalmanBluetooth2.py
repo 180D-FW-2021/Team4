@@ -27,7 +27,7 @@ import socket
 
 real_path = os.path.expanduser('~/mymac.txt')
 
-with open('real_path', 'r') as file:
+with open(real_path, 'r') as file:
     filedata = file.read()
 
 print("Your bluetooth MAC address is: " + filedata)
