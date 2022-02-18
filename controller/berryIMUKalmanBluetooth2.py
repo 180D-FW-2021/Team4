@@ -25,8 +25,17 @@ import datetime
 import os
 import socket
 
-receiver_address = '7c:b2:7d:49:e7:2d' # change this to your MAC address
-port = 5 # if 5 isn't available, choose another port # between 1-30
+with open('~/mymac.txt', 'r') as file:
+    filedata = file.read()
+
+print("Your bluetooth MAC address is: " + filedata)
+file.close()
+
+receiver_address = filedata.strip() # change this to your computer's bluetooth MAC address
+port = 5
+
+#receiver_address = '7c:b2:7d:49:e7:2d' # change this to your MAC address
+#port = 5 # if 5 isn't available, choose another port # between 1-30
 
 # Attempt connection for up to 1 minute before quitting script
 # This is due to "permission denied" error that sometimes occurs on Linux machines when connecting
