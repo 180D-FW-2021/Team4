@@ -24,6 +24,12 @@ import IMU
 import datetime
 import os
 import socket
+import argparse
+
+parser = argparse.ArgumentParser(description='Motion controller for freeride game')
+parser.add_argument('--debug', action='store_true')
+args = vars(parser.parse_args())
+
 
 with open('/home/pi/mymac.txt', 'r') as file:
     filedata = file.read()
@@ -48,7 +54,8 @@ for _ in range(20):
         break
     except Exception as e:
         print("Attempting connection... Please wait")
-        print(e)
+        if args['debug']:
+            print(e)
         time.sleep(3)
         client.close() # need to create a new socket on failure so close old one
         continue
