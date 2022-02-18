@@ -25,9 +25,7 @@ import datetime
 import os
 import socket
 
-real_path = os.path.expanduser('~')
-
-with open(real_path + '/mymac.txt', 'r') as file:
+with open('/home/pi/mymac.txt', 'r') as file:
     filedata = file.read()
 
 print("Your bluetooth MAC address is: " + filedata)
