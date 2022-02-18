@@ -38,7 +38,8 @@ for _ in range(20):
         client.connect((receiver_address, port))
         break
     except Exception as e:
-        print("Connect failed... Retrying")
+        print("Attempting connection... Please wait")
+        print(e)
         time.sleep(3)
         client.close() # need to create a new socket on failure so close old one
         continue
