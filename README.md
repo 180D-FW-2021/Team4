@@ -50,7 +50,7 @@ Placeholder
 
 Make sure that you run the following commands in the directory where you want to save the project
 
-Run the following commands:
+Run the following commands on your host PC:
   
     git clone https://github.com/180D-FW-2021/Team4
     cd Team4
@@ -74,7 +74,7 @@ Using SSH on your Raspberry PI, run the following:
     cd Team4
     cd controller
     
-In berryIMUKalmanBluetooth.py, replace the MAC address in line 28 with the same MAC address used earlier
+On your Raspberry PI, open berryIMUKalmanBluetooth.py, replace the MAC address in line 28 with the same MAC address used earlier
 
 Run the following:
 
