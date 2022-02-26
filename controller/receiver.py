@@ -1,24 +1,17 @@
 import socket
 import json
-import time
 import UdpComms as U
-import subprocess
 import tempfile
 
-script = "findBTMac.bat"
-run = subprocess.Popen(script, shell=True, stdout = subprocess.PIPE)
-stdout, stderr = run.communicate()
-print("Script returned with status code: " + str(run.returncode))
-
 temp_dir = tempfile.gettempdir()
-with open(temp_dir + '\mymac.txt', 'r') as file:
-    filedata = file.read()
+try:
+    with open(temp_dir + '/freeride_setup/mymac.txt', 'r') as file:
+        filedata = file.read()
+except OSError as e:
+    print("MAC address file not found. Have you run the first time setup script?")
+    exit()
 
-filedata = filedata.replace('-', ':')
 print("Your bluetooth MAC address is: " + filedata)
-file.close()
-with open(temp_dir + '\mymac.txt', 'w') as file:
-    file.write(filedata)
 file.close()
 
 server_address = filedata.strip() # change this to your computer's bluetooth MAC address
