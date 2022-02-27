@@ -101,3 +101,11 @@ Run the following commands:
 You may now launch the game and begin playing by double clicking on Freeride.exe
 
     
+# Game Rules
+
+### Control Method
+Each time a player is spawned, the default input method is the IMU controller. If you're using a keyboard, simply press [k] right after spawning. You can also press [k] again to change back to IMU control.
+
+### Solo Mode
+
+* After entering the game scene, click the [Host(Server+Client)] button to spawn your player. (/images/ss1.png)
