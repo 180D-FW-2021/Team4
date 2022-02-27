@@ -2,6 +2,13 @@ import socket
 import json
 import UdpComms as U
 import tempfile
+import sys
+import argparse
+
+sys.path.append("../")
+import PoseModule as PM
+
+# TODO: Add command line argument to run without initiating posemodule
 
 temp_dir = tempfile.gettempdir()
 try:
@@ -10,6 +17,8 @@ try:
 except OSError as e:
     print("MAC address file not found. Have you run the first time setup script?")
     exit()
+
+PM.main()
 
 print("Your bluetooth MAC address is: " + filedata)
 file.close()
