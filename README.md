@@ -108,5 +108,20 @@ Each time a player is spawned, the default input method is the IMU controller. I
 
 ### Solo Mode
 
-* After entering the game scene, click the [Host(Server+Client)] button to spawn your player.
+* After entering the game scene, click the [Host(Server+Client)] button in the top left corner to spawn your player.
 ![Host/client Options](/images/ss1.png)
+* To win the game, collect all 3 checkpoint rings before the timer runs out. There are also little Christmas-themed objects along the way that you can feel free to explore.
+**Important** Remember to [Stop Host/Client] at the end of a round.
+
+### Duo Mode
+
+* As the first player, click the [Host(Server+Client)] button.
+* After the first player has established server, the second player can enter the hostname in the input field (saying localhost by default), then click [Client] to connect to the game.
+* Now the two players can ride around in the same game!
+* The duo mode has no checkpoints. Players can freely explore around the mountain, enjoy the view, while gathering the Christmas-themed collectibles.
+* The collectibles are now each worth 100 points; you could work together to gain points before the clock runs out - or you could just play around :D
+**Important** Remember to [Stop Host/Client] at the end of a round.
+
+### Voice Commands
+
+*
