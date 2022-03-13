@@ -126,6 +126,10 @@ Each time a player is spawned, the default input method is the IMU controller. I
 
 ### Voice Commands
 
-* "Start": to start solo mode
+* "Solo": to start solo mode
+* "Duo": to start duo mode
+* "stop": to pause the game and open the pause menu
+* "go back": to close the pause menu and resume the game
+* "take pictures": to make a screenshot
 * "Reset": to go back to main menu
 * "Restart": to restart current level
