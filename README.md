@@ -140,7 +140,7 @@ Each time a player is spawned, the default input method is the IMU controller. I
 
 * As the first player, click the [Host(Server+Client)] button.
 * After the first player has established server, the second player can enter the hostname in the input field (saying localhost by default), then click [Client] to connect to the game.
-* The Host address can be found using the following command. Then, look for the IPv4 Address.
+* The hostname can be found using the following command from the host PC. Then, look for the IPv4 Address.
 ```
     ipconfig /all
 ``` 
