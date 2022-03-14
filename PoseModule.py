@@ -1,10 +1,14 @@
 import cv2
 import mediapipe as mp
 import time
-
+import argparse
 import sys
 sys.path.append(".\controller")
 import UdpComms as U
+
+# parser = argparse.ArgumentParser(description='Pose detection script for freeride game')
+# parser.add_argument('--debug', action='store_true')
+# args = vars(parser.parse_args())
 
 sock = U.UdpComms(udpIP="127.0.0.1", portTX=8001, portRX=8003, enableRX=True, suppressWarnings=True)
 
@@ -74,7 +78,8 @@ def main():
         pTime = cTime
 
         sock.SendData(str(output))
-        print(output)
+        # if(args['debug']):
+        #     print(output)
         cv2.putText(img, str(int(fps)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
         cv2.imshow("Image", img)
         cv2.waitKey(1)
