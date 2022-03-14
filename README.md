@@ -118,6 +118,7 @@ Each time a player is spawned, the default input method is the IMU controller. I
 
 * As the first player, click the [Host(Server+Client)] button.
 * After the first player has established server, the second player can enter the hostname in the input field (saying localhost by default), then click [Client] to connect to the game.
+* The Host address can be found using command "ipconfig /all". Look for the IPv4 Address.
 * Now the two players can ride around in the same game!
 * The duo mode has no checkpoints. Players can freely explore around the mountain, enjoy the view, while gathering the Christmas-themed collectibles.
 * The collectibles are now each worth 100 points; you could work together to gain points before the clock runs out - or you could just play around :D
