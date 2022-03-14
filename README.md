@@ -20,6 +20,7 @@ The game incorporates computer vision-based pose detection coupled with a custom
 ### If using custom controller
 
 * Raspberry PI Zero WH
+* USB cable and a USB 3.0 or greater port on your PC
 * MicroSD Card
     * Minimum of 4GB to install the requisite Raspbian image
 * BerryIMUv3
