@@ -47,9 +47,15 @@ def handler(sig, f):
 def launch_init():
     print("init")
     try:
-        subprocess.call([r'.\first_time_setup.bat'])
+    #    p1 = subprocess.Popen('echo free', shell=True, stdout=subprocess.PIPE)
+    #    p2 = subprocess.Popen('first_time_setup.bat', stdin=p1.stdout)
+    # try:
+         subprocess.call([r'.\first_time_setup.bat'])
     except subprocess.CalledProcessError as e:
         print(e)
+        master.destroy(1)
+        time.sleep(2)
+        exit(1)
 
 def start_transmission():
     #signal.signal(signal.SIGINT, handler)
