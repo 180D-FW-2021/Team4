@@ -28,8 +28,7 @@ The game incorporates computer vision-based pose detection coupled with a custom
 * A method of powering the Raspberry Pi
     * External battery bank recommended but you can plug into PC as well
 * A set of bike handlebars to make using the controller easier (Recommended)
-    * We don't currently have instructions to make it but hardware-savvy users can see how the mount is done in the below photo
-![Raspberry PI and IMU attached to mountain bike handlebars](/images/controller.png)  
+    * Instructions shown below in the handlebar section!
 
 # Controls
 ### Keyboard and Mouse
@@ -51,6 +50,11 @@ The game incorporates computer vision-based pose detection coupled with a custom
 ```
     git clone https://github.com/180D-FW-2021/Team4
 ```
+### Handlebars
+
+The handlebar is made out of a direct mount downhill stem, a handlebar, and grips. Make a plate about 3.5 inches wide and 4.5 inches long. To mount the stem to a plate, drill the corners of a rectangle 30 mm tall and 50 mm wide to fit a 6 mm bolt. Put nuts on the bolts to hold the stem secure to the plate. In addition, it’s possible to use long bolts in the front two holes to hold up the controller. Our controller has a long nut on the first two bolts to fit two additional bolts to hold it up. The battery is attached to the stem using Proline tire bands. Any large strong rubber bands can be used. The IMU can be held on using one of the rubber bands with the x-axis pointing forward. The Raspberry Pi can be attached using  velcro. An example image is shown below!
+
+![Raspberry PI and IMU attached to mountain bike handlebars](/images/controller.png)
 
 ### Raspberry PI setup
 
