@@ -58,7 +58,7 @@ The handlebar is made out of a direct mount downhill stem, a handlebar, and grip
 
 ### Raspberry PI setup
 
-Download the latest version of our Raspbian image [here](https://drive.google.com/file/d/1xR5fUs9Dn2AiZSrX5KjP963uS0IBcHe7/view?usp=sharing)!
+Download the latest version of our Raspbian image [here](https://drive.google.com/file/d/1I8fVbq301bvZXsQzbALoeqMukqAreyoB/view?usp=sharing)!
 Once downloaded, insert your SD card into your PC and use an imaging software of your choice to burn the image to your SD card. Instructions for each are below. We recommend [Raspberry PI Imager](https://downloads.raspberrypi.org/imager/imager_latest.exe) or [BalenaEtcher](https://github.com/balena-io/etcher/releases/download/v1.7.7/balenaEtcher-Portable-1.7.7.exe?d_id=9cccbf8a-2c5a-45c8-905c-2a206ba5e6d4R).
 
 #### Installing image
