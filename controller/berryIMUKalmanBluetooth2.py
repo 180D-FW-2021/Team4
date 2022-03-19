@@ -24,9 +24,24 @@ import IMU
 import datetime
 import os
 import socket
+import argparse
 
-receiver_address = '7c:b2:7d:49:e7:2d' # change this to your MAC address
-port = 5 # if 5 isn't available, choose another port # between 1-30
+parser = argparse.ArgumentParser(description='Motion controller for freeride game')
+parser.add_argument('--debug', action='store_true')
+args = vars(parser.parse_args())
+
+
+with open('/home/pi/mymac.txt', 'r') as file:
+    filedata = file.read()
+
+print("Your bluetooth MAC address is: " + filedata)
+file.close()
+
+receiver_address = filedata.strip() # change this to your computer's bluetooth MAC address
+port = 5
+
+#receiver_address = '7c:b2:7d:49:e7:2d' # change this to your MAC address
+#port = 5 # if 5 isn't available, choose another port # between 1-30
 
 # Attempt connection for up to 1 minute before quitting script
 # This is due to "permission denied" error that sometimes occurs on Linux machines when connecting
@@ -38,7 +53,9 @@ for _ in range(20):
         client.connect((receiver_address, port))
         break
     except Exception as e:
-        print("Connect failed... Retrying")
+        print("Attempting connection... Please wait")
+        if args['debug']:
+            print(e)
         time.sleep(3)
         client.close() # need to create a new socket on failure so close old one
         continue
