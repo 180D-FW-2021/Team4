@@ -85,7 +85,7 @@ Once downloaded, insert your SD card into your PC and use an imaging software of
 * Connect your Raspberry PI to your PC using a Micro USB cable. Make sure you are connecting to the port labeled "USB" **NOT** the one marked "PWR", this is the port closer to the center of the Raspberry PI. 
 * The on-board LED will flash green for a moment, wait to proceed until you see the green light mostly stop blinking.
 * Open the controls folder found inside Team4.
-* Double click on **first_time_setup.bat**. Note that if using the same controller with multiple PCs, you must run this script each time you change to a different one.
+* Run **receiver.py** on your PC as described below and click **install controller**. Note that if using the same controller with multiple PCs, you must run this script each time you change to a different one.
 * When prompted for a password, type the word "free"
 * Once the terminal window closes, disconnect your Raspberry PI from its power.
 
@@ -101,26 +101,12 @@ Run the following commands on your host PC:
     conda activate yourenvnamehere
     pip install mediapipe==0.8.4
 ``` 
-Using SSH on your Raspberry PI, run the following:
-```
-    git clone https://github.com/180D-FW-2021/Team4
-    cd Team4
-    cd controller
-```
-
-Run the following:
-```
-    sudo pip install smbus2==0.4.0
-```
 On your PC, run the following command:
 ```
     python receiver.py
 ```    
-Back on the Raspberry PI, run the following:
-```
-    sudo python berryIMUKalmanBluetooth.py
-```
-You should begin to see output like the following:  
+After completing the installation step as detailed in "Raspberry PI First-Time Setup", you can check the controller and/or pose box and then click **start receiver** to begin the receiver script.
+Once the controller connects, you should begin to see output like the following! 
 
 ![Output of receiver.py](/images/output.png)
 
