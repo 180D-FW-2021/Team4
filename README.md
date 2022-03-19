@@ -14,7 +14,7 @@ The game incorporates computer vision-based pose detection coupled with a custom
 * Internet Connection
 * Keyboard and Mouse
 * Download the zipped version of the latest version of the full game(freeride_OG) or the pro extension(pro_extension) from [here](https://drive.google.com/drive/folders/1TNyI20opnT0iORDcK3ohroQoQwGf5iiG?usp=sharing)
-* Miniconda(TO DELETE)
+* Miniconda
     * you can install it [here](https://docs.conda.io/en/latest/miniconda.html)
 
 ### If using custom controller
